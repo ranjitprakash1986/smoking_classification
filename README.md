@@ -1,1 +1,1 @@
-# smoking_classification
+# Smoking Classification (Kaggle playground series)
