@@ -23,16 +23,16 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='ALT' datatype='integer' name='[ALT Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
-        <calculation class='tableau' formula='1' />
-        <range max='5000' min='1' />
+      <column caption='ALT' datatype='integer' name='[ALT Parameter]' param-domain-type='range' role='measure' type='quantitative' value='23'>
+        <calculation class='tableau' formula='23' />
+        <range max='100' min='0' />
       </column>
-      <column caption='AST' datatype='integer' name='[AST Parameter]' param-domain-type='range' role='measure' type='quantitative' value='7'>
-        <calculation class='tableau' formula='7' />
+      <column caption='AST' datatype='integer' name='[AST Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
         <range max='2000' min='0' />
       </column>
-      <column caption='age' datatype='integer' name='[Age Parameter]' param-domain-type='range' role='measure' type='quantitative' value='20'>
-        <calculation class='tableau' formula='20' />
+      <column caption='age' datatype='integer' name='[Age Parameter]' param-domain-type='range' role='measure' type='quantitative' value='38'>
+        <calculation class='tableau' formula='38' />
         <range granularity='1' max='100' min='0' />
       </column>
       <column caption='Cholesterol' datatype='integer' name='[Cholesterol Parameter]' param-domain-type='range' role='measure' type='quantitative' value='7'>
@@ -55,12 +55,12 @@
         <calculation class='tableau' formula='46' />
         <range granularity='1' max='700' min='1' />
       </column>
-      <column caption='Gtp' datatype='integer' name='[Gtp Parameter]' param-domain-type='range' role='measure' type='quantitative' value='2'>
-        <calculation class='tableau' formula='2' />
-        <range max='2000' min='1' />
+      <column caption='Gtp' datatype='integer' name='[Gtp Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82'>
+        <calculation class='tableau' formula='82' />
+        <range max='100' min='0' />
       </column>
-      <column caption='HDL' datatype='integer' name='[HDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='18'>
-        <calculation class='tableau' formula='18' />
+      <column caption='HDL' datatype='integer' name='[HDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='267'>
+        <calculation class='tableau' formula='267' />
         <range max='500' min='1' />
       </column>
       <column caption='hearing(left)' datatype='integer' name='[Hearing(Left) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
@@ -71,48 +71,48 @@
         <calculation class='tableau' formula='1' />
         <range granularity='1' max='2' min='1' />
       </column>
-      <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='231'>
-        <calculation class='tableau' formula='231' />
+      <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='165'>
+        <calculation class='tableau' formula='165' />
         <range granularity='1' max='300' min='100' />
       </column>
-      <column caption='hemoglobin' datatype='real' name='[Hemoglobin Parameter]' param-domain-type='range' role='measure' type='quantitative' value='4.9000000000000004'>
-        <calculation class='tableau' formula='4.9000000000000004' />
+      <column caption='hemoglobin' datatype='real' name='[Hemoglobin Parameter]' param-domain-type='range' role='measure' type='quantitative' value='20.460230115057527'>
+        <calculation class='tableau' formula='20.460230115057527' />
         <range max='50.0' min='0.0' />
       </column>
-      <column caption='LDL' datatype='integer' name='[LDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
-        <calculation class='tableau' formula='1' />
+      <column caption='LDL' datatype='integer' name='[LDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='111'>
+        <calculation class='tableau' formula='111' />
         <range max='3000' min='1' />
       </column>
-      <column caption='gender' datatype='integer' default-format='N' name='[Male Probability Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
-        <calculation class='tableau' formula='1' />
+      <column caption='gender (female:0 , male:1)' datatype='integer' default-format='N' name='[Male Probability Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
         <range granularity='1' max='1' min='0' />
       </column>
       <column caption='relaxation' datatype='integer' name='[Relaxation Parameter]' param-domain-type='range' role='measure' type='quantitative' value='44'>
         <calculation class='tableau' formula='44' />
         <range granularity='1' max='200' min='1' />
       </column>
-      <column caption='serum creatinine' datatype='real' name='[Serum Creatinine Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.10000000000000001'>
-        <calculation class='tableau' formula='0.10000000000000001' />
+      <column caption='serum creatinine' datatype='real' name='[Serum Creatinine Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.88044022011005507'>
+        <calculation class='tableau' formula='0.88044022011005507' />
         <range max='20.0' min='0.0' />
       </column>
-      <column caption='systolic' datatype='integer' name='[Systolic Parameter]' param-domain-type='range' role='measure' type='quantitative' value='77'>
-        <calculation class='tableau' formula='77' />
+      <column caption='systolic' datatype='integer' name='[Systolic Parameter]' param-domain-type='range' role='measure' type='quantitative' value='173'>
+        <calculation class='tableau' formula='173' />
         <range max='300' min='1' />
       </column>
-      <column caption='triglyceride' datatype='integer' name='[Triglyceride Parameter]' param-domain-type='range' role='measure' type='quantitative' value='8'>
-        <calculation class='tableau' formula='8' />
+      <column caption='triglyceride' datatype='integer' name='[Triglyceride Parameter]' param-domain-type='range' role='measure' type='quantitative' value='583'>
+        <calculation class='tableau' formula='583' />
         <range max='700' min='1' />
       </column>
       <column caption='Urine protein' datatype='integer' name='[Urine protein Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
         <calculation class='tableau' formula='1' />
         <range max='20' min='0' />
       </column>
-      <column caption='waist(cm)' datatype='real' name='[Waist(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='51.0'>
-        <calculation class='tableau' formula='51.0' />
+      <column caption='waist(cm)' datatype='real' name='[Waist(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82.332166083041528'>
+        <calculation class='tableau' formula='82.332166083041528' />
         <range max='200.0' min='1.0' />
       </column>
-      <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='146'>
-        <calculation class='tableau' formula='146' />
+      <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
+        <calculation class='tableau' formula='64' />
         <range granularity='1' max='300' min='1' />
       </column>
     </datasource>
@@ -707,25 +707,85 @@
       </connection>
       <aliases enabled='yes' />
       <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='ordinal'>
-        <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;from ast import literal_eval&#13;&#10;&#13;&#10;# dictionary of the user input parameter values&#13;&#10;d = {&#13;&#10;&apos;weight(kg)&apos;: [_arg1],&#13;&#10;&apos;height(cm)&apos;: [_arg2]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(d)&#13;&#10;&#13;&#10;# function for calculating &#13;&#10;def bmi_feat(df):&#13;&#10;    &apos;&apos;&apos; creates the bmi and the associated risk colum&#13;&#10;    BMI &lt; 18.5 - Underwieght&#13;&#10;    BMI between 18.5- 24.99 - Normal&#13;&#10;    BMI between 25- 29.99 - Overweight&#13;&#10;    BMI between 30-34.99 - Obese- grade 1&#13;&#10;    BMI between 35- 39.99 - Obese- grade 2&#13;&#10;    BMI &gt;= 40.00 - Obese- grade 3 &#13;&#10;    &apos;&apos;&apos;&#13;&#10;    &#13;&#10;    &#13;&#10;    bmi_ranges = [0, 18.5, 25, 30, 35, 40, float(&apos;inf&apos;)]&#13;&#10;    bmi_levels = [&apos;Underweight&apos;, &apos;Normal&apos;, &apos;Overweight&apos;, &apos;Obese-lvl1&apos;,&apos;Obese-lvl2&apos;, &apos;Obese-lvl3&apos;]&#13;&#10;    &#13;&#10;    df[&apos;bmi&apos;] = df[&apos;weight(kg)&apos;] / ((df[&apos;height(cm)&apos;]*0.01)**2)&#13;&#10;    df[&apos;bmi_category&apos;] = pd.cut(df[&apos;bmi&apos;], bins = bmi_ranges, labels=bmi_levels, right=False)&#13;&#10;    &#13;&#10;    return df[&apos;bmi&apos;][0]&#13;&#10;&#13;&#10;bmi_feat(df)&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
+        <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]*0.01)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='bmi_category' datatype='string' name='[Calculation_893401604376068096]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0] &lt; 18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese - grade 1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese - grade 2&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='lgbm_predict' datatype='string' name='[Calculation_893401604398247948]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# Check if quotes are a problem&#13;&#10;inp_list = [f&apos;_arg{i}[0]&apos; for i in range(1,37,1)]&#13;&#10;&#13;&#10;inp = np.array(inp_list).reshape(1,-1)&#13;&#10;&#13;&#10;pred = lgbm_model.predict(inp)&#13;&#10;#pred_proba = best_lgbm.predict_proba(X_test)[:,1]&#13;&#10;&#13;&#10; &#13;&#10;return 1&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;))'>
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
       <_.fcp.ObjectModelTableType.true...column caption='X_train.csv' datatype='table' name='[__tableau_internal_object_id__].[X_train.csv_E7F7936F41B540C086817A11305E9DB6]' role='measure' type='quantitative' />
       <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='bp_risk' datatype='string' name='[age_risk (copy)_893401604386263043]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing bp risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;120:&#13;&#10;    bp_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=120 and _arg1[0]&lt;130:&#13;&#10;    bp_cat = &apos;elevated&apos;&#13;&#10;if _arg1[0] &gt;=130 and _arg1[0]&lt;140:&#13;&#10;    bp_cat = &apos;high_lvl1&apos;&#13;&#10;if _arg1[0] &gt;=140 and _arg1[0]&lt;180:&#13;&#10;    bp_cat = &apos;high_lvl2&apos;&#13;&#10;if _arg1[0] &gt;=180 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    bp_cat = &apos;high_lvl3&apos;&#13;&#10;&#13;&#10;return bp_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Systolic Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Age Risk' datatype='string' name='[age_risk]' role='dimension' type='nominal' />
       <column caption='Alt Cat' datatype='string' name='[alt_cat]' role='dimension' type='nominal' />
       <column caption='Anemic Risk' datatype='string' name='[anemic_risk]' role='dimension' type='nominal' />
+      <column caption='alt_cat' datatype='string' name='[ast_cat (copy)_893401604397449227]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing alt category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;29:&#13;&#10;    alt_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=29 and _arg1[0]&lt;33:&#13;&#10;    alt_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=33 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    alt_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return alt_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[ALT Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Ast Cat' datatype='string' name='[ast_cat]' role='dimension' type='nominal' />
       <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+      <column caption='obesity_risk' datatype='string' name='[bmi_category (copy)_893401604383248385]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing obesity category&#13;&#10;# female&#13;&#10;if _arg1[0] &lt; 0.5:&#13;&#10;    if _arg2[0] &gt;=0 and _arg2[0]&lt;80:&#13;&#10;        obesity_cat = &apos;low risk&apos;&#13;&#10;    if _arg2[0] &gt;=80 and _arg2[0]&lt;88:&#13;&#10;        obesity_cat = &apos;high risk&apos;&#13;&#10;    if _arg2[0] &gt;=88 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        obesity_cat = &apos;very high risk&apos;&#13;&#10;&#13;&#10;# male&#13;&#10;if _arg1[0] &gt;= 0.5:&#13;&#10;    if _arg2[0] &gt;=0 and _arg2[0]&lt;94:&#13;&#10;        obesity_cat = &apos;low risk&apos;&#13;&#10;    if _arg2[0] &gt;=94 and _arg2[0]&lt;102:&#13;&#10;        obesity_cat = &apos;high risk&apos;&#13;&#10;    if _arg2[0] &gt;=102 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        obesity_cat = &apos;very high risk&apos;&#13;&#10;&#13;&#10;return obesity_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Male Probability Parameter],[Parameters].[Waist(Cm) Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='creatinine_cat' datatype='string' name='[bmi_category (copy)_893401604391993352]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing creatinine category based on gender&#13;&#10;# female&#13;&#10;if _arg1[0] &lt; 0.5:&#13;&#10;    if _arg2[0] &gt;= 0 and _arg2[0]&lt;0.6:&#13;&#10;        creatinine_cat = &apos;low&apos;&#13;&#10;    if _arg2[0] &gt;=0.6 and _arg2[0]&lt;1.04:&#13;&#10;        creatinine_cat = &apos;normal&apos;&#13;&#10;    if _arg2[0] &gt;=1.04 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        creatinine_cat = &apos;high&apos;&#13;&#10;# male&#13;&#10;if _arg1[0] &gt;= 0.5:&#13;&#10;    if _arg2[0] &gt;= 0 and _arg2[0]&lt;0.75:&#13;&#10;        creatinine_cat = &apos;low&apos;&#13;&#10;    if _arg2[0] &gt;=0.75 and _arg2[0]&lt;1.35:&#13;&#10;        creatinine_cat = &apos;normal&apos;&#13;&#10;    if _arg2[0] &gt;=1.35 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        creatinine_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return creatinine_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Male Probability Parameter],[Parameters].[Serum Creatinine Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Bmi Category' datatype='string' name='[bmi_category]' role='dimension' type='nominal' />
+      <column caption='hdl_risk' datatype='string' name='[bp_risk (copy)_893401604388724740]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing hdl risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;40:&#13;&#10;    hdl_cat = &apos;high risk&apos;&#13;&#10;if _arg1[0] &gt;=40 and _arg1[0]&lt;60:&#13;&#10;    hdl_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=60 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    hdl_cat = &apos;low risk&apos;&#13;&#10;&#13;&#10;return hdl_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[HDL Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Bp Risk' datatype='string' name='[bp_risk]' role='dimension' type='nominal' />
+      <column caption='gtp_cat' datatype='string' name='[creatinine_cat (copy)_893401604396097545]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing gtp category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;5:&#13;&#10;    gtp_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=5 and _arg1[0]&lt;40:&#13;&#10;    gtp_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=40 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    gtp_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return gtp_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Gtp Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Creatinine Cat' datatype='string' name='[creatinine_cat]' role='dimension' type='nominal' />
       <column caption='Dental Caries' datatype='integer' name='[dental caries]' role='measure' type='quantitative' />
       <column caption='Eyesight(Left)' datatype='real' name='[eyesight(left)]' role='measure' type='quantitative' />
       <column caption='Eyesight(Right)' datatype='real' name='[eyesight(right)]' role='measure' type='quantitative' />
       <column caption='Fasting Blood Sugar' datatype='integer' name='[fasting blood sugar]' role='measure' type='quantitative' />
+      <column caption='ast_cat' datatype='string' name='[gtp_cat (copy)_893401604397080586]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing ast category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;8:&#13;&#10;    ast_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=8 and _arg1[0]&lt;45:&#13;&#10;    ast_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    ast_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return ast_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[AST Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Gtp Cat' datatype='string' name='[gtp_cat]' role='dimension' type='nominal' />
+      <column caption='ldl_risk' datatype='string' name='[hdl_risk (copy)_893401604389814277]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing ldl risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;100:&#13;&#10;    ldl_cat = &apos;optimal&apos;&#13;&#10;if _arg1[0] &gt;=100 and _arg1[0]&lt;130:&#13;&#10;    ldl_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=130 and _arg1[0]&lt;160:&#13;&#10;    ldl_cat = &apos;high_lvl1&apos;&#13;&#10;if _arg1[0] &gt;=160 and _arg1[0]&lt;190:&#13;&#10;    ldl_cat = &apos;high_lvl2&apos;&#13;&#10;if _arg1[0] &gt;=190 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    ldl_cat = &apos;high_lvl3&apos;&#13;&#10;&#13;&#10;return ldl_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[LDL Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='tg_risk' datatype='string' name='[hdl_risk (copy)_893401604390563846]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing triglyceride risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;150:&#13;&#10;    tg_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=150 and _arg1[0]&lt;200:&#13;&#10;    tg_cat = &apos;moderate_risk&apos;&#13;&#10;if _arg1[0] &gt;=200 and _arg1[0]&lt;500:&#13;&#10;    tg_cat = &apos;high_risk&apos;&#13;&#10;if _arg1[0] &gt;=500 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    tg_cat = &apos;very_high_risk&apos;&#13;&#10;&#13;&#10;return tg_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Triglyceride Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='anemic_risk' datatype='string' name='[hdl_risk (copy)_893401604391546887]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing anemic risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;12:&#13;&#10;    anemic_cat = &apos;high risk&apos;&#13;&#10;if _arg1[0] &gt;=12 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    anemic_cat = &apos;low risk&apos;&#13;&#10;&#13;&#10;return anemic_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Hemoglobin Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Hdl Risk' datatype='string' name='[hdl_risk]' role='dimension' type='nominal' />
       <column caption='Hearing(Left)' datatype='integer' name='[hearing(left)]' role='measure' type='quantitative' />
       <column caption='Hearing(Right)' datatype='integer' name='[hearing(right)]' role='measure' type='quantitative' />
@@ -733,6 +793,11 @@
       <column caption='Hemoglobin' datatype='real' name='[hemoglobin]' role='measure' type='quantitative' />
       <column caption='Ldl Risk' datatype='string' name='[ldl_risk]' role='dimension' type='nominal' />
       <column caption='Male Probability' datatype='real' name='[male_probability]' role='measure' type='quantitative' />
+      <column caption='age_risk' datatype='string' name='[obesity_risk (copy)_893401604385492994]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing age category&#13;&#10;&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;45:&#13;&#10;    age_cat = &apos;low risk&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    age_cat = &apos;high risk&apos;&#13;&#10;&#13;&#10;return age_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Age Parameter]&#13;&#10;))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Obesity Risk' datatype='string' name='[obesity_risk]' role='dimension' type='nominal' />
       <column caption='Relaxation' datatype='integer' name='[relaxation]' role='measure' type='quantitative' />
       <column caption='Serum Creatinine' datatype='real' name='[serum creatinine]' role='measure' type='quantitative' />
@@ -741,7 +806,7 @@
       <column caption='Triglyceride' datatype='integer' name='[triglyceride]' role='measure' type='quantitative' />
       <column caption='Waist(Cm)' datatype='real' name='[waist(cm)]' role='measure' type='quantitative' />
       <column caption='Weight(Kg)' datatype='integer' name='[weight(kg)]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.450271' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.549729' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.43038' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.56962' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
       </semantic-values>
@@ -790,12 +855,96 @@
         <field-sort-custom-order field='Multiple Values' />
       </field-sort-info>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='231'>
-          <calculation class='tableau' formula='231' />
+        <column caption='ALT' datatype='integer' name='[ALT Parameter]' param-domain-type='range' role='measure' type='quantitative' value='23'>
+          <calculation class='tableau' formula='23' />
+          <range max='100' min='0' />
+        </column>
+        <column caption='AST' datatype='integer' name='[AST Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <range max='2000' min='0' />
+        </column>
+        <column caption='age' datatype='integer' name='[Age Parameter]' param-domain-type='range' role='measure' type='quantitative' value='38'>
+          <calculation class='tableau' formula='38' />
+          <range granularity='1' max='100' min='0' />
+        </column>
+        <column caption='Cholesterol' datatype='integer' name='[Cholesterol Parameter]' param-domain-type='range' role='measure' type='quantitative' value='7'>
+          <calculation class='tableau' formula='7' />
+          <range max='700' min='1' />
+        </column>
+        <column caption='dental caries' datatype='integer' name='[Dental Caries Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <range granularity='1' max='1' min='0' />
+        </column>
+        <column caption='eyesight(left)' datatype='real' name='[Eyesight(Left) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.10000000000000001'>
+          <calculation class='tableau' formula='0.10000000000000001' />
+          <range max='9.9000000000000004' min='0.10000000000000001' />
+        </column>
+        <column caption='eyesight(right)' datatype='real' name='[Eyesight(Right) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.10000000000000001'>
+          <calculation class='tableau' formula='0.10000000000000001' />
+          <range max='9.9000000000000004' min='0.10000000000000001' />
+        </column>
+        <column caption='fasting blood sugar' datatype='integer' name='[Fasting Blood Sugar Parameter]' param-domain-type='range' role='measure' type='quantitative' value='46'>
+          <calculation class='tableau' formula='46' />
+          <range granularity='1' max='700' min='1' />
+        </column>
+        <column caption='Gtp' datatype='integer' name='[Gtp Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82'>
+          <calculation class='tableau' formula='82' />
+          <range max='100' min='0' />
+        </column>
+        <column caption='HDL' datatype='integer' name='[HDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='267'>
+          <calculation class='tableau' formula='267' />
+          <range max='500' min='1' />
+        </column>
+        <column caption='hearing(left)' datatype='integer' name='[Hearing(Left) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <range granularity='1' max='2' min='1' />
+        </column>
+        <column caption='hearing(right)' datatype='integer' name='[Hearing(Right) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <range granularity='1' max='2' min='1' />
+        </column>
+        <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='165'>
+          <calculation class='tableau' formula='165' />
           <range granularity='1' max='300' min='100' />
         </column>
-        <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='146'>
-          <calculation class='tableau' formula='146' />
+        <column caption='hemoglobin' datatype='real' name='[Hemoglobin Parameter]' param-domain-type='range' role='measure' type='quantitative' value='20.460230115057527'>
+          <calculation class='tableau' formula='20.460230115057527' />
+          <range max='50.0' min='0.0' />
+        </column>
+        <column caption='LDL' datatype='integer' name='[LDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='111'>
+          <calculation class='tableau' formula='111' />
+          <range max='3000' min='1' />
+        </column>
+        <column caption='gender (female:0 , male:1)' datatype='integer' default-format='N' name='[Male Probability Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+          <calculation class='tableau' formula='0' />
+          <range granularity='1' max='1' min='0' />
+        </column>
+        <column caption='relaxation' datatype='integer' name='[Relaxation Parameter]' param-domain-type='range' role='measure' type='quantitative' value='44'>
+          <calculation class='tableau' formula='44' />
+          <range granularity='1' max='200' min='1' />
+        </column>
+        <column caption='serum creatinine' datatype='real' name='[Serum Creatinine Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.88044022011005507'>
+          <calculation class='tableau' formula='0.88044022011005507' />
+          <range max='20.0' min='0.0' />
+        </column>
+        <column caption='systolic' datatype='integer' name='[Systolic Parameter]' param-domain-type='range' role='measure' type='quantitative' value='173'>
+          <calculation class='tableau' formula='173' />
+          <range max='300' min='1' />
+        </column>
+        <column caption='triglyceride' datatype='integer' name='[Triglyceride Parameter]' param-domain-type='range' role='measure' type='quantitative' value='583'>
+          <calculation class='tableau' formula='583' />
+          <range max='700' min='1' />
+        </column>
+        <column caption='Urine protein' datatype='integer' name='[Urine protein Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <range max='20' min='0' />
+        </column>
+        <column caption='waist(cm)' datatype='real' name='[Waist(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82.332166083041528'>
+          <calculation class='tableau' formula='82.332166083041528' />
+          <range max='200.0' min='1.0' />
+        </column>
+        <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
+          <calculation class='tableau' formula='64' />
           <range granularity='1' max='300' min='1' />
         </column>
       </datasource-dependencies>
@@ -851,7 +1000,7 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Sheet 1'>
+    <worksheet name='Inputs'>
       <table>
         <view>
           <datasources>
@@ -859,23 +1008,185 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='231'>
-              <calculation class='tableau' formula='231' />
+            <column caption='ALT' datatype='integer' name='[ALT Parameter]' param-domain-type='range' role='measure' type='quantitative' value='23'>
+              <calculation class='tableau' formula='23' />
+              <range max='100' min='0' />
+            </column>
+            <column caption='AST' datatype='integer' name='[AST Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <range max='2000' min='0' />
+            </column>
+            <column caption='age' datatype='integer' name='[Age Parameter]' param-domain-type='range' role='measure' type='quantitative' value='38'>
+              <calculation class='tableau' formula='38' />
+              <range granularity='1' max='100' min='0' />
+            </column>
+            <column caption='Cholesterol' datatype='integer' name='[Cholesterol Parameter]' param-domain-type='range' role='measure' type='quantitative' value='7'>
+              <calculation class='tableau' formula='7' />
+              <range max='700' min='1' />
+            </column>
+            <column caption='dental caries' datatype='integer' name='[Dental Caries Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <range granularity='1' max='1' min='0' />
+            </column>
+            <column caption='eyesight(left)' datatype='real' name='[Eyesight(Left) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.10000000000000001'>
+              <calculation class='tableau' formula='0.10000000000000001' />
+              <range max='9.9000000000000004' min='0.10000000000000001' />
+            </column>
+            <column caption='eyesight(right)' datatype='real' name='[Eyesight(Right) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.10000000000000001'>
+              <calculation class='tableau' formula='0.10000000000000001' />
+              <range max='9.9000000000000004' min='0.10000000000000001' />
+            </column>
+            <column caption='fasting blood sugar' datatype='integer' name='[Fasting Blood Sugar Parameter]' param-domain-type='range' role='measure' type='quantitative' value='46'>
+              <calculation class='tableau' formula='46' />
+              <range granularity='1' max='700' min='1' />
+            </column>
+            <column caption='Gtp' datatype='integer' name='[Gtp Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82'>
+              <calculation class='tableau' formula='82' />
+              <range max='100' min='0' />
+            </column>
+            <column caption='HDL' datatype='integer' name='[HDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='267'>
+              <calculation class='tableau' formula='267' />
+              <range max='500' min='1' />
+            </column>
+            <column caption='hearing(left)' datatype='integer' name='[Hearing(Left) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <range granularity='1' max='2' min='1' />
+            </column>
+            <column caption='hearing(right)' datatype='integer' name='[Hearing(Right) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <range granularity='1' max='2' min='1' />
+            </column>
+            <column caption='height(cm)' datatype='integer' name='[Height(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='165'>
+              <calculation class='tableau' formula='165' />
               <range granularity='1' max='300' min='100' />
             </column>
-            <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='146'>
-              <calculation class='tableau' formula='146' />
+            <column caption='hemoglobin' datatype='real' name='[Hemoglobin Parameter]' param-domain-type='range' role='measure' type='quantitative' value='20.460230115057527'>
+              <calculation class='tableau' formula='20.460230115057527' />
+              <range max='50.0' min='0.0' />
+            </column>
+            <column caption='LDL' datatype='integer' name='[LDL Parameter]' param-domain-type='range' role='measure' type='quantitative' value='111'>
+              <calculation class='tableau' formula='111' />
+              <range max='3000' min='1' />
+            </column>
+            <column caption='gender (female:0 , male:1)' datatype='integer' default-format='N' name='[Male Probability Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0'>
+              <calculation class='tableau' formula='0' />
+              <range granularity='1' max='1' min='0' />
+            </column>
+            <column caption='relaxation' datatype='integer' name='[Relaxation Parameter]' param-domain-type='range' role='measure' type='quantitative' value='44'>
+              <calculation class='tableau' formula='44' />
+              <range granularity='1' max='200' min='1' />
+            </column>
+            <column caption='serum creatinine' datatype='real' name='[Serum Creatinine Parameter]' param-domain-type='range' role='measure' type='quantitative' value='0.88044022011005507'>
+              <calculation class='tableau' formula='0.88044022011005507' />
+              <range max='20.0' min='0.0' />
+            </column>
+            <column caption='systolic' datatype='integer' name='[Systolic Parameter]' param-domain-type='range' role='measure' type='quantitative' value='173'>
+              <calculation class='tableau' formula='173' />
+              <range max='300' min='1' />
+            </column>
+            <column caption='triglyceride' datatype='integer' name='[Triglyceride Parameter]' param-domain-type='range' role='measure' type='quantitative' value='583'>
+              <calculation class='tableau' formula='583' />
+              <range max='700' min='1' />
+            </column>
+            <column caption='Urine protein' datatype='integer' name='[Urine protein Parameter]' param-domain-type='range' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <range max='20' min='0' />
+            </column>
+            <column caption='waist(cm)' datatype='real' name='[Waist(Cm) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='82.332166083041528'>
+              <calculation class='tableau' formula='82.332166083041528' />
+              <range max='200.0' min='1.0' />
+            </column>
+            <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
+              <calculation class='tableau' formula='64' />
               <range granularity='1' max='300' min='1' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.1p4zl1j0pk55gs1azxvmv0tcbuim'>
             <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='ordinal'>
-              <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;from ast import literal_eval&#13;&#10;&#13;&#10;# dictionary of the user input parameter values&#13;&#10;d = {&#13;&#10;&apos;weight(kg)&apos;: [_arg1],&#13;&#10;&apos;height(cm)&apos;: [_arg2]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(d)&#13;&#10;&#13;&#10;# function for calculating &#13;&#10;def bmi_feat(df):&#13;&#10;    &apos;&apos;&apos; creates the bmi and the associated risk colum&#13;&#10;    BMI &lt; 18.5 - Underwieght&#13;&#10;    BMI between 18.5- 24.99 - Normal&#13;&#10;    BMI between 25- 29.99 - Overweight&#13;&#10;    BMI between 30-34.99 - Obese- grade 1&#13;&#10;    BMI between 35- 39.99 - Obese- grade 2&#13;&#10;    BMI &gt;= 40.00 - Obese- grade 3 &#13;&#10;    &apos;&apos;&apos;&#13;&#10;    &#13;&#10;    &#13;&#10;    bmi_ranges = [0, 18.5, 25, 30, 35, 40, float(&apos;inf&apos;)]&#13;&#10;    bmi_levels = [&apos;Underweight&apos;, &apos;Normal&apos;, &apos;Overweight&apos;, &apos;Obese-lvl1&apos;,&apos;Obese-lvl2&apos;, &apos;Obese-lvl3&apos;]&#13;&#10;    &#13;&#10;    df[&apos;bmi&apos;] = df[&apos;weight(kg)&apos;] / ((df[&apos;height(cm)&apos;]*0.01)**2)&#13;&#10;    df[&apos;bmi_category&apos;] = pd.cut(df[&apos;bmi&apos;], bins = bmi_ranges, labels=bmi_levels, right=False)&#13;&#10;    &#13;&#10;    return df[&apos;bmi&apos;][0]&#13;&#10;&#13;&#10;bmi_feat(df)&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
+              <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]*0.01)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
-            <column-instance column='[Calculation_2730870252166651904]' derivation='User' name='[usr:Calculation_2730870252166651904:nk]' pivot='key' type='ordinal'>
+            <column caption='bmi_category' datatype='string' name='[Calculation_893401604376068096]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0] &lt; 18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese - grade 1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese - grade 2&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='lgbm_predict' datatype='string' name='[Calculation_893401604398247948]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# Check if quotes are a problem&#13;&#10;inp_list = [f&apos;_arg{i}[0]&apos; for i in range(1,37,1)]&#13;&#10;&#13;&#10;inp = np.array(inp_list).reshape(1,-1)&#13;&#10;&#13;&#10;pred = lgbm_model.predict(inp)&#13;&#10;#pred_proba = best_lgbm.predict_proba(X_test)[:,1]&#13;&#10;&#13;&#10; &#13;&#10;return 1&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='bp_risk' datatype='string' name='[age_risk (copy)_893401604386263043]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing bp risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;120:&#13;&#10;    bp_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=120 and _arg1[0]&lt;130:&#13;&#10;    bp_cat = &apos;elevated&apos;&#13;&#10;if _arg1[0] &gt;=130 and _arg1[0]&lt;140:&#13;&#10;    bp_cat = &apos;high_lvl1&apos;&#13;&#10;if _arg1[0] &gt;=140 and _arg1[0]&lt;180:&#13;&#10;    bp_cat = &apos;high_lvl2&apos;&#13;&#10;if _arg1[0] &gt;=180 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    bp_cat = &apos;high_lvl3&apos;&#13;&#10;&#13;&#10;return bp_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Systolic Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='alt_cat' datatype='string' name='[ast_cat (copy)_893401604397449227]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing alt category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;29:&#13;&#10;    alt_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=29 and _arg1[0]&lt;33:&#13;&#10;    alt_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=33 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    alt_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return alt_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[ALT Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='obesity_risk' datatype='string' name='[bmi_category (copy)_893401604383248385]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing obesity category&#13;&#10;# female&#13;&#10;if _arg1[0] &lt; 0.5:&#13;&#10;    if _arg2[0] &gt;=0 and _arg2[0]&lt;80:&#13;&#10;        obesity_cat = &apos;low risk&apos;&#13;&#10;    if _arg2[0] &gt;=80 and _arg2[0]&lt;88:&#13;&#10;        obesity_cat = &apos;high risk&apos;&#13;&#10;    if _arg2[0] &gt;=88 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        obesity_cat = &apos;very high risk&apos;&#13;&#10;&#13;&#10;# male&#13;&#10;if _arg1[0] &gt;= 0.5:&#13;&#10;    if _arg2[0] &gt;=0 and _arg2[0]&lt;94:&#13;&#10;        obesity_cat = &apos;low risk&apos;&#13;&#10;    if _arg2[0] &gt;=94 and _arg2[0]&lt;102:&#13;&#10;        obesity_cat = &apos;high risk&apos;&#13;&#10;    if _arg2[0] &gt;=102 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        obesity_cat = &apos;very high risk&apos;&#13;&#10;&#13;&#10;return obesity_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Male Probability Parameter],[Parameters].[Waist(Cm) Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='creatinine_cat' datatype='string' name='[bmi_category (copy)_893401604391993352]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing creatinine category based on gender&#13;&#10;# female&#13;&#10;if _arg1[0] &lt; 0.5:&#13;&#10;    if _arg2[0] &gt;= 0 and _arg2[0]&lt;0.6:&#13;&#10;        creatinine_cat = &apos;low&apos;&#13;&#10;    if _arg2[0] &gt;=0.6 and _arg2[0]&lt;1.04:&#13;&#10;        creatinine_cat = &apos;normal&apos;&#13;&#10;    if _arg2[0] &gt;=1.04 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        creatinine_cat = &apos;high&apos;&#13;&#10;# male&#13;&#10;if _arg1[0] &gt;= 0.5:&#13;&#10;    if _arg2[0] &gt;= 0 and _arg2[0]&lt;0.75:&#13;&#10;        creatinine_cat = &apos;low&apos;&#13;&#10;    if _arg2[0] &gt;=0.75 and _arg2[0]&lt;1.35:&#13;&#10;        creatinine_cat = &apos;normal&apos;&#13;&#10;    if _arg2[0] &gt;=1.35 and _arg2[0]&lt;float(&apos;inf&apos;):&#13;&#10;        creatinine_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return creatinine_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Male Probability Parameter],[Parameters].[Serum Creatinine Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='hdl_risk' datatype='string' name='[bp_risk (copy)_893401604388724740]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing hdl risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;40:&#13;&#10;    hdl_cat = &apos;high risk&apos;&#13;&#10;if _arg1[0] &gt;=40 and _arg1[0]&lt;60:&#13;&#10;    hdl_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=60 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    hdl_cat = &apos;low risk&apos;&#13;&#10;&#13;&#10;return hdl_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[HDL Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='gtp_cat' datatype='string' name='[creatinine_cat (copy)_893401604396097545]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing gtp category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;5:&#13;&#10;    gtp_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=5 and _arg1[0]&lt;40:&#13;&#10;    gtp_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=40 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    gtp_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return gtp_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Gtp Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='ast_cat' datatype='string' name='[gtp_cat (copy)_893401604397080586]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing ast category &#13;&#10;&#13;&#10;if _arg1[0] &gt;= 0 and _arg1[0]&lt;8:&#13;&#10;    ast_cat = &apos;low&apos;&#13;&#10;if _arg1[0] &gt;=8 and _arg1[0]&lt;45:&#13;&#10;    ast_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    ast_cat = &apos;high&apos;&#13;&#10;&#13;&#10;return ast_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[AST Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='ldl_risk' datatype='string' name='[hdl_risk (copy)_893401604389814277]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing ldl risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;100:&#13;&#10;    ldl_cat = &apos;optimal&apos;&#13;&#10;if _arg1[0] &gt;=100 and _arg1[0]&lt;130:&#13;&#10;    ldl_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=130 and _arg1[0]&lt;160:&#13;&#10;    ldl_cat = &apos;high_lvl1&apos;&#13;&#10;if _arg1[0] &gt;=160 and _arg1[0]&lt;190:&#13;&#10;    ldl_cat = &apos;high_lvl2&apos;&#13;&#10;if _arg1[0] &gt;=190 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    ldl_cat = &apos;high_lvl3&apos;&#13;&#10;&#13;&#10;return ldl_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[LDL Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='tg_risk' datatype='string' name='[hdl_risk (copy)_893401604390563846]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing triglyceride risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;150:&#13;&#10;    tg_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=150 and _arg1[0]&lt;200:&#13;&#10;    tg_cat = &apos;moderate_risk&apos;&#13;&#10;if _arg1[0] &gt;=200 and _arg1[0]&lt;500:&#13;&#10;    tg_cat = &apos;high_risk&apos;&#13;&#10;if _arg1[0] &gt;=500 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    tg_cat = &apos;very_high_risk&apos;&#13;&#10;&#13;&#10;return tg_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Triglyceride Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='anemic_risk' datatype='string' name='[hdl_risk (copy)_893401604391546887]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing anemic risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;12:&#13;&#10;    anemic_cat = &apos;high risk&apos;&#13;&#10;if _arg1[0] &gt;=12 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    anemic_cat = &apos;low risk&apos;&#13;&#10;&#13;&#10;return anemic_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Hemoglobin Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='age_risk' datatype='string' name='[obesity_risk (copy)_893401604385492994]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing age category&#13;&#10;&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;45:&#13;&#10;    age_cat = &apos;low risk&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    age_cat = &apos;high risk&apos;&#13;&#10;&#13;&#10;return age_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Age Parameter]&#13;&#10;))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[Calculation_893401604398247948]' derivation='User' name='[usr:Calculation_893401604398247948:nk:2]' pivot='key' type='nominal'>
               <table-calc ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_2730870252166651904]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_893401604376068096]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[age_risk (copy)_893401604386263043]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604383248385]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[creatinine_cat (copy)_893401604396097545]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[obesity_risk (copy)_893401604385492994]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bp_risk (copy)_893401604388724740]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604390563846]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604389814277]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604391546887]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604391993352]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[gtp_cat (copy)_893401604397080586]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[ast_cat (copy)_893401604397449227]' ordering-type='Rows' />
             </column-instance>
           </datasource-dependencies>
           <aggregation value='true' />
@@ -888,7 +1199,7 @@
             </view>
             <mark class='Automatic' />
             <encodings>
-              <color column='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:nk]' />
+              <color column='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -898,14 +1209,14 @@
             </style>
           </pane>
         </panes>
-        <rows>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:nk]</rows>
+        <rows>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]</rows>
         <cols />
       </table>
       <simple-id uuid='{746E6FC7-45BF-46E6-A93C-379646AC0232}' />
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Inputs'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -927,15 +1238,36 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='slider' param='[Parameters].[Weight(Kg) Parameter]' type='parameter' />
-            <card mode='slider' param='[Parameters].[Height(Cm) Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Systolic Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[HDL Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[LDL Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Triglyceride Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Hemoglobin Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Male Probability Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[ALT Parameter]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]' type='color' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
         <highlight>
           <color-one-way>
-            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[none:age_risk:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[none:bp_risk:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:ok]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604376068096:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:age_risk (copy)_893401604386263043:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:ast_cat (copy)_893401604397449227:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:bmi_category (copy)_893401604383248385:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:bmi_category (copy)_893401604391993352:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:bp_risk (copy)_893401604388724740:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:creatinine_cat (copy)_893401604396097545:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:gtp_cat (copy)_893401604397080586:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604389814277:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604390563846:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604391546887:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:obesity_risk (copy)_893401604385492994:nk]</field>
           </color-one-way>
         </highlight>
       </viewpoint>
@@ -943,19 +1275,14 @@
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='192' name='Sheet 1' width='192'>
-      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
-      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
-      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
-      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
-      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
-      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
-      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
-      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
-      fBUOM1sAAAAASUVORK5CYII=
+    <thumbnail height='44' name='Inputs' width='144'>
+      iVBORw0KGgoAAAANSUhEUgAAAJAAAAAsCAYAAACKTjG2AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAABGUlEQVR4nO3cr0oEURjG4W/F+7B6ARbDegMGhS3C3oHRaFAsGy1brINFo3mb1rkBk8xN
+      aBHGZh3Yd/wz8DxxOHC+8GPOgYGZ9X3fF2xp568HYNoERERARAREREBEBEREQEQERERARARE
+      REBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARHaHFrRt+xtzMFEz
+      P1cg4QgjIiAiAiIyeInm/zu5fBhc87Q6+5G9ozfQ5/tbvTSrOj+d17LpxpqJCQkC6urx4qo2
+      Na/D/Y/xJmJSgiNsr5Z391VV9Xw90jRMjks0EQERERARARHZ/hLdNbVcrOv1+8GiDtZVdXxb
+      7c3RCKMxBT6mEnGEEfkCnikoH877xmEAAAAASUVORK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>
