@@ -3,11 +3,14 @@
 <!-- build 20231.23.0310.1044                               -->
 <workbook original-version='18.1' source-build='2023.1.0 (20231.23.0310.1044)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
@@ -111,8 +114,8 @@
         <calculation class='tableau' formula='82.332166083041528' />
         <range max='200.0' min='1.0' />
       </column>
-      <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
-        <calculation class='tableau' formula='64' />
+      <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='71'>
+        <calculation class='tableau' formula='71' />
         <range granularity='1' max='300' min='1' />
       </column>
     </datasource>
@@ -706,18 +709,18 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='ordinal'>
-        <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]*0.01)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
+      <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]/100)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
       <column caption='bmi_category' datatype='string' name='[Calculation_893401604376068096]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0] &lt; 18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese - grade 1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese - grade 2&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;))'>
+        <calculation class='tableau' formula='SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;#print(_arg1[0])&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0]&lt;18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese-lvl1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese-lvl2&apos;&#13;&#10;if _arg1[0] &gt;= 40:&#13;&#10;    bmi_cat = &apos;Obese-lvl3&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;)'>
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
       <column caption='lgbm_predict' datatype='string' name='[Calculation_893401604398247948]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='STR(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# Check if quotes are a problem&#13;&#10;inp_list = [f&apos;_arg{i}[0]&apos; for i in range(1,37,1)]&#13;&#10;&#13;&#10;inp = np.array(inp_list).reshape(1,-1)&#13;&#10;&#13;&#10;pred = lgbm_model.predict(inp)&#13;&#10;#pred_proba = best_lgbm.predict_proba(X_test)[:,1]&#13;&#10;&#13;&#10; &#13;&#10;return 1&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;))'>
+        <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import warnings&#13;&#10;warnings.filterwarnings(&apos;ignore&apos;)&#13;&#10;&#13;&#10;# import model from url&#13;&#10;import urllib.request&#13;&#10;import requests &#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;&#13;&#10;# reading model fro URL - TBD&#13;&#10;&#13;&#10;#lgbm_model = pickle.load(&#13;&#10;#urllib.request.urlopen(&apos;https://github.com/ranjitprakash1986/smoking_classification/blob/main/dashboard/saved_models/lgbm_model_gender&apos;)&#13;&#10;#)&#13;&#10;&#13;&#10;# reading model with absolute local path&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# List comprehension add quotes to the elements causing problems&#13;&#10;&#13;&#10;inp_dict = {&#13;&#10;&apos;age&apos;:_arg1[0],&#13;&#10;&apos;height(cm)&apos;:_arg2[0],&#13;&#10;&apos;weight(kg)&apos;:_arg3[0],&#13;&#10;&apos;waist(cm)&apos;:_arg4[0],&#13;&#10;&apos;eyesight(left)&apos;:_arg5[0],&#13;&#10;&apos;eyesight(right)&apos;:_arg6[0],&#13;&#10;&apos;hearing(left)&apos;:_arg7[0],&#13;&#10;&apos;hearing(right)&apos;:_arg8[0],&#13;&#10;&apos;systolic&apos;:_arg9[0],&#13;&#10;&apos;relaxation&apos;:_arg10[0],&#13;&#10;&apos;fasting blood sugar&apos;:_arg11[0],&#13;&#10;&apos;Cholesterol&apos;:_arg12[0],&#13;&#10;&apos;triglyceride&apos;:_arg13[0],&#13;&#10;&apos;HDL&apos;:_arg14[0],&#13;&#10;&apos;LDL&apos;:_arg15[0],&#13;&#10;&apos;hemoglobin&apos;:_arg16[0],&#13;&#10;&apos;Urine protein&apos;:_arg17[0],&#13;&#10;&apos;serum creatinine&apos;:_arg18[0],&#13;&#10;&apos;AST&apos;:_arg19[0],&#13;&#10;&apos;ALT&apos;:_arg20[0],&#13;&#10;&apos;Gtp&apos;:_arg21[0],&#13;&#10;&apos;dental caries&apos;:_arg22[0],&#13;&#10;&apos;male_probability&apos;:_arg23[0],&#13;&#10;&apos;bmi&apos;:_arg24[0],&#13;&#10;&apos;bmi_category&apos;:_arg25[0],&#13;&#10;&apos;obesity_risk&apos;:_arg26[0],&#13;&#10;&apos;age_risk&apos;:_arg27[0],&#13;&#10;&apos;bp_risk&apos;:_arg28[0],&#13;&#10;&apos;hdl_risk&apos;:_arg29[0],&#13;&#10;&apos;ldl_risk&apos;:_arg30[0],&#13;&#10;&apos;tg_risk&apos;:_arg31[0],&#13;&#10;&apos;anemic_risk&apos;:_arg32[0],&#13;&#10;&apos;creatinine_cat&apos;:_arg33[0],&#13;&#10;&apos;gtp_cat&apos;:_arg34[0],&#13;&#10;&apos;ast_cat&apos;:_arg35[0],&#13;&#10;&apos;alt_cat&apos;:_arg36[0]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(inp_dict, index=[0])&#13;&#10;&#13;&#10;pred_prob = lgbm_model.predict_proba(df)&#13;&#10;pred = lgbm_model.predict(df)&#13;&#10;&#13;&#10;status =&apos;&apos;&#13;&#10;if pred == 0:&#13;&#10;    status = &apos;Non smoker&apos;&#13;&#10;if pred == 1:&#13;&#10;    status = &apos;Smoker&apos;&#13;&#10; &#13;&#10;#return pred[0][1]&#13;&#10;#print(status)&#13;&#10;return status&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;))'>
           <table-calc ordering-type='Rows' />
         </calculation>
       </column>
@@ -792,6 +795,16 @@
       <column caption='Height(Cm)' datatype='integer' name='[height(cm)]' role='measure' type='quantitative' />
       <column caption='Hemoglobin' datatype='real' name='[hemoglobin]' role='measure' type='quantitative' />
       <column caption='Ldl Risk' datatype='string' name='[ldl_risk]' role='dimension' type='nominal' />
+      <column caption='lgbm_prob_smoker' datatype='real' datatype-customized='true' name='[lgbm_predict (copy)_964333299221430274]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import warnings&#13;&#10;warnings.filterwarnings(&apos;ignore&apos;)&#13;&#10;&#13;&#10;# import model from url&#13;&#10;import urllib.request&#13;&#10;import requests &#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;&#13;&#10;# reading model fro URL - TBD&#13;&#10;&#13;&#10;#lgbm_model = pickle.load(&#13;&#10;#urllib.request.urlopen(&apos;https://github.com/ranjitprakash1986/smoking_classification/blob/main/dashboard/saved_models/lgbm_model_gender&apos;)&#13;&#10;#)&#13;&#10;&#13;&#10;# reading model with absolute local path&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# List comprehension add quotes to the elements causing problems&#13;&#10;&#13;&#10;inp_dict = {&#13;&#10;&apos;age&apos;:_arg1[0],&#13;&#10;&apos;height(cm)&apos;:_arg2[0],&#13;&#10;&apos;weight(kg)&apos;:_arg3[0],&#13;&#10;&apos;waist(cm)&apos;:_arg4[0],&#13;&#10;&apos;eyesight(left)&apos;:_arg5[0],&#13;&#10;&apos;eyesight(right)&apos;:_arg6[0],&#13;&#10;&apos;hearing(left)&apos;:_arg7[0],&#13;&#10;&apos;hearing(right)&apos;:_arg8[0],&#13;&#10;&apos;systolic&apos;:_arg9[0],&#13;&#10;&apos;relaxation&apos;:_arg10[0],&#13;&#10;&apos;fasting blood sugar&apos;:_arg11[0],&#13;&#10;&apos;Cholesterol&apos;:_arg12[0],&#13;&#10;&apos;triglyceride&apos;:_arg13[0],&#13;&#10;&apos;HDL&apos;:_arg14[0],&#13;&#10;&apos;LDL&apos;:_arg15[0],&#13;&#10;&apos;hemoglobin&apos;:_arg16[0],&#13;&#10;&apos;Urine protein&apos;:_arg17[0],&#13;&#10;&apos;serum creatinine&apos;:_arg18[0],&#13;&#10;&apos;AST&apos;:_arg19[0],&#13;&#10;&apos;ALT&apos;:_arg20[0],&#13;&#10;&apos;Gtp&apos;:_arg21[0],&#13;&#10;&apos;dental caries&apos;:_arg22[0],&#13;&#10;&apos;male_probability&apos;:_arg23[0],&#13;&#10;&apos;bmi&apos;:_arg24[0],&#13;&#10;&apos;bmi_category&apos;:_arg25[0],&#13;&#10;&apos;obesity_risk&apos;:_arg26[0],&#13;&#10;&apos;age_risk&apos;:_arg27[0],&#13;&#10;&apos;bp_risk&apos;:_arg28[0],&#13;&#10;&apos;hdl_risk&apos;:_arg29[0],&#13;&#10;&apos;ldl_risk&apos;:_arg30[0],&#13;&#10;&apos;tg_risk&apos;:_arg31[0],&#13;&#10;&apos;anemic_risk&apos;:_arg32[0],&#13;&#10;&apos;creatinine_cat&apos;:_arg33[0],&#13;&#10;&apos;gtp_cat&apos;:_arg34[0],&#13;&#10;&apos;ast_cat&apos;:_arg35[0],&#13;&#10;&apos;alt_cat&apos;:_arg36[0]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(inp_dict, index=[0])&#13;&#10;&#13;&#10;pred_prob = lgbm_model.predict_proba(df)&#13;&#10;pred = lgbm_model.predict(df)&#13;&#10;&#13;&#10;status =&apos;&apos;&#13;&#10;if pred == 0:&#13;&#10;    status = &apos;Non smoker&apos;&#13;&#10;if pred == 1:&#13;&#10;    status = &apos;Smoker&apos;&#13;&#10; &#13;&#10;return pred_prob[0][1]&#13;&#10;&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;)'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='lgbm_prob_Non_smoker' datatype='real' datatype-customized='true' name='[lgbm_prob_smoker (copy)_964333299221803011]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import warnings&#13;&#10;warnings.filterwarnings(&apos;ignore&apos;)&#13;&#10;&#13;&#10;# import model from url&#13;&#10;import urllib.request&#13;&#10;import requests &#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;&#13;&#10;# reading model fro URL - TBD&#13;&#10;&#13;&#10;#lgbm_model = pickle.load(&#13;&#10;#urllib.request.urlopen(&apos;https://github.com/ranjitprakash1986/smoking_classification/blob/main/dashboard/saved_models/lgbm_model_gender&apos;)&#13;&#10;#)&#13;&#10;&#13;&#10;# reading model with absolute local path&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# List comprehension add quotes to the elements causing problems&#13;&#10;&#13;&#10;inp_dict = {&#13;&#10;&apos;age&apos;:_arg1[0],&#13;&#10;&apos;height(cm)&apos;:_arg2[0],&#13;&#10;&apos;weight(kg)&apos;:_arg3[0],&#13;&#10;&apos;waist(cm)&apos;:_arg4[0],&#13;&#10;&apos;eyesight(left)&apos;:_arg5[0],&#13;&#10;&apos;eyesight(right)&apos;:_arg6[0],&#13;&#10;&apos;hearing(left)&apos;:_arg7[0],&#13;&#10;&apos;hearing(right)&apos;:_arg8[0],&#13;&#10;&apos;systolic&apos;:_arg9[0],&#13;&#10;&apos;relaxation&apos;:_arg10[0],&#13;&#10;&apos;fasting blood sugar&apos;:_arg11[0],&#13;&#10;&apos;Cholesterol&apos;:_arg12[0],&#13;&#10;&apos;triglyceride&apos;:_arg13[0],&#13;&#10;&apos;HDL&apos;:_arg14[0],&#13;&#10;&apos;LDL&apos;:_arg15[0],&#13;&#10;&apos;hemoglobin&apos;:_arg16[0],&#13;&#10;&apos;Urine protein&apos;:_arg17[0],&#13;&#10;&apos;serum creatinine&apos;:_arg18[0],&#13;&#10;&apos;AST&apos;:_arg19[0],&#13;&#10;&apos;ALT&apos;:_arg20[0],&#13;&#10;&apos;Gtp&apos;:_arg21[0],&#13;&#10;&apos;dental caries&apos;:_arg22[0],&#13;&#10;&apos;male_probability&apos;:_arg23[0],&#13;&#10;&apos;bmi&apos;:_arg24[0],&#13;&#10;&apos;bmi_category&apos;:_arg25[0],&#13;&#10;&apos;obesity_risk&apos;:_arg26[0],&#13;&#10;&apos;age_risk&apos;:_arg27[0],&#13;&#10;&apos;bp_risk&apos;:_arg28[0],&#13;&#10;&apos;hdl_risk&apos;:_arg29[0],&#13;&#10;&apos;ldl_risk&apos;:_arg30[0],&#13;&#10;&apos;tg_risk&apos;:_arg31[0],&#13;&#10;&apos;anemic_risk&apos;:_arg32[0],&#13;&#10;&apos;creatinine_cat&apos;:_arg33[0],&#13;&#10;&apos;gtp_cat&apos;:_arg34[0],&#13;&#10;&apos;ast_cat&apos;:_arg35[0],&#13;&#10;&apos;alt_cat&apos;:_arg36[0]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(inp_dict, index=[0])&#13;&#10;&#13;&#10;pred_prob = lgbm_model.predict_proba(df)&#13;&#10;pred = lgbm_model.predict(df)&#13;&#10;&#13;&#10;status =&apos;&apos;&#13;&#10;if pred == 0:&#13;&#10;    status = &apos;Non smoker&apos;&#13;&#10;if pred == 1:&#13;&#10;    status = &apos;Smoker&apos;&#13;&#10; &#13;&#10;return pred_prob[0][0]&#13;&#10;&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;)'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='Male Probability' datatype='real' name='[male_probability]' role='measure' type='quantitative' />
       <column caption='age_risk' datatype='string' name='[obesity_risk (copy)_893401604385492994]' role='measure' type='nominal'>
         <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing age category&#13;&#10;&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;45:&#13;&#10;    age_cat = &apos;low risk&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    age_cat = &apos;high risk&apos;&#13;&#10;&#13;&#10;return age_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Age Parameter]&#13;&#10;))'>
@@ -806,7 +819,53 @@
       <column caption='Triglyceride' datatype='integer' name='[triglyceride]' role='measure' type='quantitative' />
       <column caption='Waist(Cm)' datatype='real' name='[waist(cm)]' role='measure' type='quantitative' />
       <column caption='Weight(Kg)' datatype='integer' name='[weight(kg)]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.43038' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.56962' show-structure='true' />
+      <column-instance column='[lgbm_predict (copy)_964333299221430274]' derivation='User' name='[usr:lgbm_predict (copy)_964333299221430274:nk]' pivot='key' type='ordinal'>
+        <table-calc ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_2730870252166651904]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_893401604376068096]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[creatinine_cat (copy)_893401604396097545]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604383248385]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[age_risk (copy)_893401604386263043]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[obesity_risk (copy)_893401604385492994]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bp_risk (copy)_893401604388724740]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604390563846]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604389814277]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604391546887]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604391993352]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[gtp_cat (copy)_893401604397080586]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[ast_cat (copy)_893401604397449227]' ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[lgbm_prob_smoker (copy)_964333299221803011]' derivation='User' name='[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]' pivot='key' type='ordinal'>
+        <table-calc ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_2730870252166651904]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_893401604376068096]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[age_risk (copy)_893401604386263043]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604383248385]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[creatinine_cat (copy)_893401604396097545]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[obesity_risk (copy)_893401604385492994]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bp_risk (copy)_893401604388724740]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604390563846]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604389814277]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604391546887]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604391993352]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[gtp_cat (copy)_893401604397080586]' ordering-type='Rows' />
+        <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[ast_cat (copy)_893401604397449227]' ordering-type='Rows' />
+      </column-instance>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.449468' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.550532' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[usr:lgbm_predict (copy)_964333299221430274:nk]' type='palette'>
+            <map to='#e15759'>
+              <bucket>0.20466053709518053</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>0.79533946290481949</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
       </semantic-values>
@@ -943,8 +1002,8 @@
           <calculation class='tableau' formula='82.332166083041528' />
           <range max='200.0' min='1.0' />
         </column>
-        <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
-          <calculation class='tableau' formula='64' />
+        <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='71'>
+          <calculation class='tableau' formula='71' />
           <range granularity='1' max='300' min='1' />
         </column>
       </datasource-dependencies>
@@ -1000,7 +1059,40 @@
     </datasource>
   </datasources>
   <worksheets>
-    <worksheet name='Inputs'>
+    <worksheet name='Basic_details'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='20'>Basic Information</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{43FC886D-B69C-434B-8B56-5D25E7A13BD7}' />
+    </worksheet>
+    <worksheet name='Prediction'>
       <table>
         <view>
           <datasources>
@@ -1096,26 +1188,24 @@
               <calculation class='tableau' formula='82.332166083041528' />
               <range max='200.0' min='1.0' />
             </column>
-            <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='64'>
-              <calculation class='tableau' formula='64' />
+            <column caption='weight(kg)' datatype='integer' name='[Weight(Kg) Parameter]' param-domain-type='range' role='measure' type='quantitative' value='71'>
+              <calculation class='tableau' formula='71' />
               <range granularity='1' max='300' min='1' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.1p4zl1j0pk55gs1azxvmv0tcbuim'>
-            <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='ordinal'>
-              <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]*0.01)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
+            <column caption='bmi' datatype='real' name='[Calculation_2730870252166651904]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FLOAT(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;bmi = _arg1[0]/(_arg2[0]/100)**2&#13;&#10;return bmi&#13;&#10;&#13;&#10;&quot;,[Parameters].[Weight(Kg) Parameter], [Parameters].[Height(Cm) Parameter]&#13;&#10;))'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
             <column caption='bmi_category' datatype='string' name='[Calculation_893401604376068096]' role='measure' type='nominal'>
-              <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0] &lt; 18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese - grade 1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese - grade 2&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;))'>
+              <calculation class='tableau' formula='SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;#print(_arg1[0])&#13;&#10;# Computing BMI, converting the height from cm to m&#13;&#10;if _arg1[0]&lt;18.5:&#13;&#10;    bmi_cat = &apos;Underweight&apos;&#13;&#10;if _arg1[0] &gt;= 18.5 and _arg1[0] &lt; 25:&#13;&#10;    bmi_cat = &apos;Normal&apos;&#13;&#10;if _arg1[0] &gt;= 25 and _arg1[0] &lt; 30:&#13;&#10;    bmi_cat = &apos;Overweight&apos;&#13;&#10;if _arg1[0] &gt;= 30 and _arg1[0] &lt; 35:&#13;&#10;    bmi_cat = &apos;Obese-lvl1&apos;&#13;&#10;if _arg1[0] &gt;= 35 and _arg1[0] &lt; 40:&#13;&#10;    bmi_cat = &apos;Obese-lvl2&apos;&#13;&#10;if _arg1[0] &gt;= 40:&#13;&#10;    bmi_cat = &apos;Obese-lvl3&apos;&#13;&#10;&#13;&#10;return bmi_cat&#13;&#10;&#13;&#10;&quot;,[Calculation_2730870252166651904]&#13;&#10;)'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
-            <column caption='lgbm_predict' datatype='string' name='[Calculation_893401604398247948]' role='measure' type='nominal'>
-              <calculation class='tableau' formula='STR(SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# Check if quotes are a problem&#13;&#10;inp_list = [f&apos;_arg{i}[0]&apos; for i in range(1,37,1)]&#13;&#10;&#13;&#10;inp = np.array(inp_list).reshape(1,-1)&#13;&#10;&#13;&#10;pred = lgbm_model.predict(inp)&#13;&#10;#pred_proba = best_lgbm.predict_proba(X_test)[:,1]&#13;&#10;&#13;&#10; &#13;&#10;return 1&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;))'>
-                <table-calc ordering-type='Rows' />
-              </calculation>
+            <column caption='0' datatype='integer' name='[Calculation_964333299222339591]' role='measure' type='quantitative' user:unnamed='Prediction'>
+              <calculation class='tableau' formula='0' />
             </column>
             <column caption='bp_risk' datatype='string' name='[age_risk (copy)_893401604386263043]' role='measure' type='nominal'>
               <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing bp risk&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;120:&#13;&#10;    bp_cat = &apos;normal&apos;&#13;&#10;if _arg1[0] &gt;=120 and _arg1[0]&lt;130:&#13;&#10;    bp_cat = &apos;elevated&apos;&#13;&#10;if _arg1[0] &gt;=130 and _arg1[0]&lt;140:&#13;&#10;    bp_cat = &apos;high_lvl1&apos;&#13;&#10;if _arg1[0] &gt;=140 and _arg1[0]&lt;180:&#13;&#10;    bp_cat = &apos;high_lvl2&apos;&#13;&#10;if _arg1[0] &gt;=180 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    bp_cat = &apos;high_lvl3&apos;&#13;&#10;&#13;&#10;return bp_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Systolic Parameter]&#13;&#10;))'>
@@ -1167,12 +1257,39 @@
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
+            <column caption='lgbm_prob_smoker' datatype='real' datatype-customized='true' name='[lgbm_predict (copy)_964333299221430274]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import warnings&#13;&#10;warnings.filterwarnings(&apos;ignore&apos;)&#13;&#10;&#13;&#10;# import model from url&#13;&#10;import urllib.request&#13;&#10;import requests &#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;&#13;&#10;# reading model fro URL - TBD&#13;&#10;&#13;&#10;#lgbm_model = pickle.load(&#13;&#10;#urllib.request.urlopen(&apos;https://github.com/ranjitprakash1986/smoking_classification/blob/main/dashboard/saved_models/lgbm_model_gender&apos;)&#13;&#10;#)&#13;&#10;&#13;&#10;# reading model with absolute local path&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# List comprehension add quotes to the elements causing problems&#13;&#10;&#13;&#10;inp_dict = {&#13;&#10;&apos;age&apos;:_arg1[0],&#13;&#10;&apos;height(cm)&apos;:_arg2[0],&#13;&#10;&apos;weight(kg)&apos;:_arg3[0],&#13;&#10;&apos;waist(cm)&apos;:_arg4[0],&#13;&#10;&apos;eyesight(left)&apos;:_arg5[0],&#13;&#10;&apos;eyesight(right)&apos;:_arg6[0],&#13;&#10;&apos;hearing(left)&apos;:_arg7[0],&#13;&#10;&apos;hearing(right)&apos;:_arg8[0],&#13;&#10;&apos;systolic&apos;:_arg9[0],&#13;&#10;&apos;relaxation&apos;:_arg10[0],&#13;&#10;&apos;fasting blood sugar&apos;:_arg11[0],&#13;&#10;&apos;Cholesterol&apos;:_arg12[0],&#13;&#10;&apos;triglyceride&apos;:_arg13[0],&#13;&#10;&apos;HDL&apos;:_arg14[0],&#13;&#10;&apos;LDL&apos;:_arg15[0],&#13;&#10;&apos;hemoglobin&apos;:_arg16[0],&#13;&#10;&apos;Urine protein&apos;:_arg17[0],&#13;&#10;&apos;serum creatinine&apos;:_arg18[0],&#13;&#10;&apos;AST&apos;:_arg19[0],&#13;&#10;&apos;ALT&apos;:_arg20[0],&#13;&#10;&apos;Gtp&apos;:_arg21[0],&#13;&#10;&apos;dental caries&apos;:_arg22[0],&#13;&#10;&apos;male_probability&apos;:_arg23[0],&#13;&#10;&apos;bmi&apos;:_arg24[0],&#13;&#10;&apos;bmi_category&apos;:_arg25[0],&#13;&#10;&apos;obesity_risk&apos;:_arg26[0],&#13;&#10;&apos;age_risk&apos;:_arg27[0],&#13;&#10;&apos;bp_risk&apos;:_arg28[0],&#13;&#10;&apos;hdl_risk&apos;:_arg29[0],&#13;&#10;&apos;ldl_risk&apos;:_arg30[0],&#13;&#10;&apos;tg_risk&apos;:_arg31[0],&#13;&#10;&apos;anemic_risk&apos;:_arg32[0],&#13;&#10;&apos;creatinine_cat&apos;:_arg33[0],&#13;&#10;&apos;gtp_cat&apos;:_arg34[0],&#13;&#10;&apos;ast_cat&apos;:_arg35[0],&#13;&#10;&apos;alt_cat&apos;:_arg36[0]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(inp_dict, index=[0])&#13;&#10;&#13;&#10;pred_prob = lgbm_model.predict_proba(df)&#13;&#10;pred = lgbm_model.predict(df)&#13;&#10;&#13;&#10;status =&apos;&apos;&#13;&#10;if pred == 0:&#13;&#10;    status = &apos;Non smoker&apos;&#13;&#10;if pred == 1:&#13;&#10;    status = &apos;Smoker&apos;&#13;&#10; &#13;&#10;return pred_prob[0][1]&#13;&#10;&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;)'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='lgbm_prob_Non_smoker' datatype='real' datatype-customized='true' name='[lgbm_prob_smoker (copy)_964333299221803011]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='SCRIPT_REAL(&#13;&#10;&quot;&#13;&#10;# standard imports&#13;&#10;import pickle&#13;&#10;import pandas as pd&#13;&#10;import numpy as np&#13;&#10;import warnings&#13;&#10;warnings.filterwarnings(&apos;ignore&apos;)&#13;&#10;&#13;&#10;# import model from url&#13;&#10;import urllib.request&#13;&#10;import requests &#13;&#10;&#13;&#10;# models&#13;&#10;from sklearn.preprocessing import StandardScaler&#13;&#10;from sklearn.model_selection import cross_val_score, cross_validate, train_test_split&#13;&#10;from sklearn.pipeline import Pipeline, make_pipeline&#13;&#10;from sklearn.compose import ColumnTransformer, make_column_transformer&#13;&#10;from sklearn.preprocessing import (&#13;&#10;    MinMaxScaler,&#13;&#10;    OneHotEncoder,&#13;&#10;    OrdinalEncoder,&#13;&#10;    StandardScaler,&#13;&#10;)&#13;&#10;from lightgbm.sklearn import LGBMClassifier&#13;&#10;from sklearn.model_selection import RandomizedSearchCV&#13;&#10;from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score&#13;&#10;from sklearn.metrics import roc_curve&#13;&#10;&#13;&#10;&#13;&#10;# reading model fro URL - TBD&#13;&#10;&#13;&#10;#lgbm_model = pickle.load(&#13;&#10;#urllib.request.urlopen(&apos;https://github.com/ranjitprakash1986/smoking_classification/blob/main/dashboard/saved_models/lgbm_model_gender&apos;)&#13;&#10;#)&#13;&#10;&#13;&#10;# reading model with absolute local path&#13;&#10;lgbm_model = pickle.load(&#13;&#10;open(&apos;C:/Users/ranji/Documents/Learning/Kaggle/predicting_smoking_classification/smoking_classification/dashboard/saved_models/lgbm_model_gender&apos;, &apos;rb&apos;)&#13;&#10;)&#13;&#10;&#13;&#10;&#13;&#10;# List comprehension add quotes to the elements causing problems&#13;&#10;&#13;&#10;inp_dict = {&#13;&#10;&apos;age&apos;:_arg1[0],&#13;&#10;&apos;height(cm)&apos;:_arg2[0],&#13;&#10;&apos;weight(kg)&apos;:_arg3[0],&#13;&#10;&apos;waist(cm)&apos;:_arg4[0],&#13;&#10;&apos;eyesight(left)&apos;:_arg5[0],&#13;&#10;&apos;eyesight(right)&apos;:_arg6[0],&#13;&#10;&apos;hearing(left)&apos;:_arg7[0],&#13;&#10;&apos;hearing(right)&apos;:_arg8[0],&#13;&#10;&apos;systolic&apos;:_arg9[0],&#13;&#10;&apos;relaxation&apos;:_arg10[0],&#13;&#10;&apos;fasting blood sugar&apos;:_arg11[0],&#13;&#10;&apos;Cholesterol&apos;:_arg12[0],&#13;&#10;&apos;triglyceride&apos;:_arg13[0],&#13;&#10;&apos;HDL&apos;:_arg14[0],&#13;&#10;&apos;LDL&apos;:_arg15[0],&#13;&#10;&apos;hemoglobin&apos;:_arg16[0],&#13;&#10;&apos;Urine protein&apos;:_arg17[0],&#13;&#10;&apos;serum creatinine&apos;:_arg18[0],&#13;&#10;&apos;AST&apos;:_arg19[0],&#13;&#10;&apos;ALT&apos;:_arg20[0],&#13;&#10;&apos;Gtp&apos;:_arg21[0],&#13;&#10;&apos;dental caries&apos;:_arg22[0],&#13;&#10;&apos;male_probability&apos;:_arg23[0],&#13;&#10;&apos;bmi&apos;:_arg24[0],&#13;&#10;&apos;bmi_category&apos;:_arg25[0],&#13;&#10;&apos;obesity_risk&apos;:_arg26[0],&#13;&#10;&apos;age_risk&apos;:_arg27[0],&#13;&#10;&apos;bp_risk&apos;:_arg28[0],&#13;&#10;&apos;hdl_risk&apos;:_arg29[0],&#13;&#10;&apos;ldl_risk&apos;:_arg30[0],&#13;&#10;&apos;tg_risk&apos;:_arg31[0],&#13;&#10;&apos;anemic_risk&apos;:_arg32[0],&#13;&#10;&apos;creatinine_cat&apos;:_arg33[0],&#13;&#10;&apos;gtp_cat&apos;:_arg34[0],&#13;&#10;&apos;ast_cat&apos;:_arg35[0],&#13;&#10;&apos;alt_cat&apos;:_arg36[0]&#13;&#10;}&#13;&#10;&#13;&#10;df = pd.DataFrame(inp_dict, index=[0])&#13;&#10;&#13;&#10;pred_prob = lgbm_model.predict_proba(df)&#13;&#10;pred = lgbm_model.predict(df)&#13;&#10;&#13;&#10;status =&apos;&apos;&#13;&#10;if pred == 0:&#13;&#10;    status = &apos;Non smoker&apos;&#13;&#10;if pred == 1:&#13;&#10;    status = &apos;Smoker&apos;&#13;&#10; &#13;&#10;return pred_prob[0][0]&#13;&#10;&#13;&#10;&quot;,&#13;&#10;[Parameters].[Age Parameter],&#13;&#10;[Parameters].[Height(Cm) Parameter],&#13;&#10;[Parameters].[Weight(Kg) Parameter],&#13;&#10;[Parameters].[Waist(Cm) Parameter],&#13;&#10;[Parameters].[Eyesight(Left) Parameter],&#13;&#10;[Parameters].[Eyesight(Right) Parameter],&#13;&#10;[Parameters].[Hearing(Left) Parameter],&#13;&#10;[Parameters].[Hearing(Right) Parameter],&#13;&#10;[Parameters].[Systolic Parameter],&#13;&#10;[Parameters].[Relaxation Parameter],&#13;&#10;[Parameters].[Fasting Blood Sugar Parameter],&#13;&#10;[Parameters].[Cholesterol Parameter],&#13;&#10;[Parameters].[Triglyceride Parameter],&#13;&#10;[Parameters].[HDL Parameter],&#13;&#10;[Parameters].[LDL Parameter],&#13;&#10;[Parameters].[Hemoglobin Parameter],&#13;&#10;[Parameters].[Urine protein Parameter],&#13;&#10;[Parameters].[Serum Creatinine Parameter],&#13;&#10;[Parameters].[AST Parameter],&#13;&#10;[Parameters].[ALT Parameter],&#13;&#10;[Parameters].[Gtp Parameter],&#13;&#10;[Parameters].[Dental Caries Parameter],&#13;&#10;[Parameters].[Male Probability Parameter],&#13;&#10;[Calculation_2730870252166651904],&#13;&#10;[Calculation_893401604376068096],&#13;&#10;[bmi_category (copy)_893401604383248385],&#13;&#10;[obesity_risk (copy)_893401604385492994],&#13;&#10;[age_risk (copy)_893401604386263043],&#13;&#10;[bp_risk (copy)_893401604388724740],&#13;&#10;[hdl_risk (copy)_893401604389814277],&#13;&#10;[hdl_risk (copy)_893401604390563846],&#13;&#10;[hdl_risk (copy)_893401604391546887],&#13;&#10;[bmi_category (copy)_893401604391993352],&#13;&#10;[creatinine_cat (copy)_893401604396097545],&#13;&#10;[gtp_cat (copy)_893401604397080586],&#13;&#10;[ast_cat (copy)_893401604397449227]&#13;&#10;)'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
             <column caption='age_risk' datatype='string' name='[obesity_risk (copy)_893401604385492994]' role='measure' type='nominal'>
               <calculation class='tableau' formula='STR(SCRIPT_STR(&#13;&#10;&quot;&#13;&#10;&#13;&#10;# Computing age category&#13;&#10;&#13;&#10;if _arg1[0] &gt;=0 and _arg1[0]&lt;45:&#13;&#10;    age_cat = &apos;low risk&apos;&#13;&#10;if _arg1[0] &gt;=45 and _arg1[0]&lt;float(&apos;inf&apos;):&#13;&#10;    age_cat = &apos;high risk&apos;&#13;&#10;&#13;&#10;return age_cat&#13;&#10;&#13;&#10;&quot;,[Parameters].[Age Parameter]&#13;&#10;))'>
                 <table-calc ordering-type='Rows' />
               </calculation>
             </column>
-            <column-instance column='[Calculation_893401604398247948]' derivation='User' name='[usr:Calculation_893401604398247948:nk:2]' pivot='key' type='nominal'>
+            <column-instance column='[Calculation_964333299222339591]' derivation='Sum' name='[sum:Calculation_964333299222339591:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lgbm_predict (copy)_964333299221430274]' derivation='User' name='[usr:lgbm_predict (copy)_964333299221430274:nk]' pivot='key' type='ordinal'>
+              <table-calc ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_2730870252166651904]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_893401604376068096]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[creatinine_cat (copy)_893401604396097545]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604383248385]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[age_risk (copy)_893401604386263043]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[obesity_risk (copy)_893401604385492994]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bp_risk (copy)_893401604388724740]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604390563846]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604389814277]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[hdl_risk (copy)_893401604391546887]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[bmi_category (copy)_893401604391993352]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[gtp_cat (copy)_893401604397080586]' ordering-type='Rows' />
+              <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[ast_cat (copy)_893401604397449227]' ordering-type='Rows' />
+            </column-instance>
+            <column-instance column='[lgbm_prob_smoker (copy)_964333299221803011]' derivation='User' name='[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]' pivot='key' type='ordinal'>
               <table-calc ordering-type='Rows' />
               <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_2730870252166651904]' ordering-type='Rows' />
               <table-calc field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[Calculation_893401604376068096]' ordering-type='Rows' />
@@ -1191,16 +1308,20 @@
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[sum:Calculation_964333299222339591:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]' value='false' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
-            <encodings>
-              <color column='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]' />
-            </encodings>
+            <mark class='Pie' />
             <style>
               <style-rule element='mark'>
                 <format attr='mark-labels-cull' value='true' />
@@ -1208,21 +1329,83 @@
               </style-rule>
             </style>
           </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[sum:Calculation_964333299222339591:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='4.6765055656433105' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[sum:Calculation_964333299222339591:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <lod column='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]' />
+              <lod column='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:lgbm_predict (copy)_964333299221430274:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='3.4806630611419678' />
+                <format attr='mark-color' value='#ffffff' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
         </panes>
-        <rows>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]</rows>
+        <rows>([federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[sum:Calculation_964333299222339591:qk] + [federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[sum:Calculation_964333299222339591:qk])</rows>
         <cols />
       </table>
       <simple-id uuid='{746E6FC7-45BF-46E6-A93C-379646AC0232}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones />
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='12' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='11' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{53A9E741-81CC-4511-8528-12E01263E014}' />
+    </dashboard>
+  </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Inputs'>
+    <window class='worksheet' maximized='true' name='Prediction'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='286'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
+            <card mode='slider' param='[Parameters].[Age Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Weight(Kg) Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Height(Cm) Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Waist(Cm) Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Male Probability Parameter]' type='parameter' />
           </strip>
         </edge>
         <edge name='top'>
@@ -1238,26 +1421,29 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='slider' param='[Parameters].[Systolic Parameter]' type='parameter' />
-            <card mode='slider' param='[Parameters].[HDL Parameter]' type='parameter' />
-            <card mode='slider' param='[Parameters].[LDL Parameter]' type='parameter' />
             <card mode='slider' param='[Parameters].[Triglyceride Parameter]' type='parameter' />
             <card mode='slider' param='[Parameters].[Hemoglobin Parameter]' type='parameter' />
-            <card mode='slider' param='[Parameters].[Male Probability Parameter]' type='parameter' />
             <card mode='slider' param='[Parameters].[ALT Parameter]' type='parameter' />
-            <card pane-specification-id='0' param='[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]' type='color' />
+            <card mode='slider' param='[Parameters].[LDL Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[HDL Parameter]' type='parameter' />
+            <card mode='slider' param='[Parameters].[Systolic Parameter]' type='parameter' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
+        <zoom type='entire-view' />
         <highlight>
           <color-one-way>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[none:age_risk:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[none:bp_risk:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:ok:1]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_2730870252166651904:ok]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604376068096:nk:1]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604376068096:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:4]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:age_risk (copy)_893401604386263043:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:age_risk (copy)_893401604386263043:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:ast_cat (copy)_893401604397449227:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:bmi_category (copy)_893401604383248385:nk:1]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:bmi_category (copy)_893401604391993352:nk:1]</field>
@@ -1267,22 +1453,166 @@
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604389814277:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604390563846:nk:1]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:hdl_risk (copy)_893401604391546887:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:lgbm_predict (copy)_964333299221430274:nk]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:lgbm_prob_smoker (copy)_964333299221803011:nk]</field>
             <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:obesity_risk (copy)_893401604385492994:nk]</field>
           </color-one-way>
         </highlight>
       </viewpoint>
       <simple-id uuid='{BD2F0B85-D0B1-4569-8982-B0D308B7A173}' />
     </window>
+    <window class='worksheet' name='Basic_details'>
+      <cards>
+        <edge name='left'>
+          <strip size='135'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:1]</field>
+            <field>[federated.1p4zl1j0pk55gs1azxvmv0tcbuim].[usr:Calculation_893401604398247948:nk:2]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AF5438F3-2EDD-40DD-82A0-44DD0EA4BE92}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{96ED1916-B9D7-4A15-80A1-F73300E09D55}' />
+    </window>
   </windows>
   <thumbnails>
-    <thumbnail height='44' name='Inputs' width='144'>
-      iVBORw0KGgoAAAANSUhEUgAAAJAAAAAsCAYAAACKTjG2AAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAABGUlEQVR4nO3cr0oEURjG4W/F+7B6ARbDegMGhS3C3oHRaFAsGy1brINFo3mb1rkBk8xN
-      aBHGZh3Yd/wz8DxxOHC+8GPOgYGZ9X3fF2xp568HYNoERERARAREREBEBEREQEQERERARARE
-      REBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARHaHFrRt+xtzMFEz
-      P1cg4QgjIiAiAiIyeInm/zu5fBhc87Q6+5G9ozfQ5/tbvTSrOj+d17LpxpqJCQkC6urx4qo2
-      Na/D/Y/xJmJSgiNsr5Z391VV9Xw90jRMjks0EQERERARARHZ/hLdNbVcrOv1+8GiDtZVdXxb
-      7c3RCKMxBT6mEnGEEfkCnikoH877xmEAAAAASUVORK5CYII=
+    <thumbnail height='192' name='Basic_details' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Prediction' width='192'>
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
