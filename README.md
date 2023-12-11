@@ -10,9 +10,11 @@ Develop a model to predict the status (Smoker or Non Smoker) based on the data o
 
 The data for the repository is sourced from [Data 1](https://www.kaggle.com/competitions/playground-series-s3e24/data). This data is supplemented with data from another source, [Data 2](https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-biosignals) for feature engineering purposes. 
 
-## Analysis Summary and Results
+## Analysis and Results
 
-This project uses feature engineering through domain information sourced from health websites to create a LGBM (light gradient-boosting machine) model. The Data 2 source contains `Gender` as a feature, which interestingly is closely related to the `Smoking` status. This information is used to construe a `male probability` feature in the Data 1 source. Categorical features were developed based on the health risk ranges sourced from the internet. The model built on these input features provided an appreciable 0.86 ROC metric.  
+This project uses feature engineering through domain information sourced from health websites to create a LGBM (light gradient-boosting machine) model. The Data 2 source contains `Gender` as a feature, which interestingly is closely related to the `Smoking` status. This information is used to construe a `male probability` feature in the Data 1 source. Categorical features were developed based on the health risk ranges sourced from the internet. The model built on these input features provided an appreciable 0.86 ROC metric.
+
+Specific steps followed in the feature engineering can be found in the notebook [here](src/feat_engg.ipynb). More details will be added in future.
 
 ## Dashboard
 
