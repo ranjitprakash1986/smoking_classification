@@ -52,8 +52,25 @@ conda env create -f environment.yaml
 conda activate smoking
 ```
 
-5. Navigate to the folder named `dashboard` and double click the `dashboard.twb` to launch it.
-
-```python
+5. Initiate Tabpy.
 
 ```
+tabpy
+```
+
+    Open a new browser window and type url http://localhost:9004/ to verify if tabpy is running. You will see a screen as below if tabpy is running.
+![tabpy_documentation](img/tabpy_localhost.jpg)
+
+
+5. Navigate to the folder named `dashboard` and double click the `dashboard.twb` to launch it. There maybe a notification as follows to run the scripts. Click `yes`.
+
+![Notification](img/run_script_notification.jpg)
+
+
+## Attributions
+
+The following links were of great assistance in writing the scripts required for the Tableau dashboard.
+
+* https://www.youtube.com/watch?v=oX1UM87-Oyk
+* https://www.youtube.com/watch?v=R__EeIePba8
+
